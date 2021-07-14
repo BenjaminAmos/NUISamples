@@ -1,0 +1,10 @@
+ext {
+    gdxVersion = '1.9.8'
+    nuiRemote = project.hasProperty('nuiRemote') ? project.getProperty('nuiRemote') : 'https://github.com/MovingBlocks/TeraNUI.git'
+    nuiBranch = project.hasProperty('nuiBranch') ? project.getProperty('nuiBranch') : 'master'
+}
+
+tasks.register('fetchNUI', Exec) {
+    executable = 'git'
+    args = ['clone', nuiRemote, 'libs/TeraNUI', '-b', nuiBranch]
+}

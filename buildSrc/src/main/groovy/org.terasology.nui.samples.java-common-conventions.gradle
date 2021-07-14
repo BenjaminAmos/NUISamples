@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+    // Needed indirectly for nui-libgdx
+    google()
+
+    // Repo for LibGDX
+    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+
+    // Terasology Artifactory for any shared libs
+    maven {
+        url "http://artifactory.terasology.org/artifactory/virtual-repo-live"
+        allowInsecureProtocol true // TODO: When the Terasology artifactory supports HTTPS, remove this!
+    }
+}
+
+dependencies {
+    constraints {
+        // Define dependency versions as constraints
+        implementation 'org.terasology.nui:nui:3.1.0-SNAPSHOT'
+        implementation 'org.terasology.nui:nui-input:3.1.0-SNAPSHOT'
+        implementation 'org.terasology.nui:nui-libgdx:3.1.0-SNAPSHOT'
+    }
+
+    // Use JUnit Jupiter for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}

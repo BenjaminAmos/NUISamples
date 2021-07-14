@@ -1,0 +1,11 @@
+rootProject.name = 'NUISamples'
+include('desktop', 'samples')
+
+if (file('libs/TeraNUI').exists()) {
+  includeBuild('libs/TeraNUI')
+}
+
+// Include Android if a local.properties configuration file has been provided
+if (file('local.properties').exists()) {
+  include 'android'
+}
