@@ -116,21 +116,19 @@ public class SamplesApp implements ApplicationListener {
 
         // Explicitly specify pointer to opt-in to multi-touch logic
         int pointerCount = mouseDevice.getMaxPointers();
-        Vector2i[] positions = new Vector2i[pointerCount];
         for (int pointer = 0; pointer < pointerCount; pointer++) {
-            Vector2i position = mouseDevice.getPosition(pointer);
             if (simulateSecondPointer && pointer == 1) {
-                position = simulatedPointer.getPosition();
-            }
-
-            if (!position.equals(0, 0)) {
-                positions[pointer] = position;
+                canvas.processMousePosition(simulatedPointer.getPosition(), 1);
             } else {
-                // Set the pointer to an off-screen location, so it acts as if it were not present.
-                positions[pointer] = new Vector2i(Integer.MAX_VALUE, Integer.MAX_VALUE);
+                Vector2i position = mouseDevice.getPosition(pointer);
+                if (!position.equals(0, 0)) {
+                    canvas.processMousePosition(position, pointer);
+                } else {
+                    // Set the pointer to an off-screen location, so it acts as if it were not present.
+                    canvas.processMousePosition(new Vector2i(Integer.MAX_VALUE, Integer.MAX_VALUE), pointer);
+                }
             }
         }
-        canvas.processMousePosition(positions);
 
         canvas.setGameTime(System.currentTimeMillis());
 
