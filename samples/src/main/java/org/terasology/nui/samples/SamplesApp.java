@@ -115,9 +115,9 @@ public class SamplesApp implements ApplicationListener {
         }
 
         // Explicitly specify pointer to opt-in to multi-touch logic
-        // Up to 20 pointers are supported by LibGDX on Android
-        Vector2i[] positions = new Vector2i[20];
-        for (int pointer = 0; pointer < 20; pointer++) {
+        int pointerCount = mouseDevice.getMaxPointers();
+        Vector2i[] positions = new Vector2i[pointerCount];
+        for (int pointer = 0; pointer < pointerCount; pointer++) {
             Vector2i position = mouseDevice.getPosition(pointer);
             if (simulateSecondPointer && pointer == 1) {
                 position = simulatedPointer.getPosition();

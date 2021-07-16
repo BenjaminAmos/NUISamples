@@ -4,8 +4,8 @@ A series of samples for the [NUI](https://github.com/MovingBlocks/TeraNUI) UI fr
 This project consists of a collection of small samples demonstrating the use of NUI widgets, as well as how to provide an environment for NUI to run in.
 It uses LibGDX for rendering, audio and input handling.
 
-I'm using this project as a way of practicing and learning how to best use NUI and also as an informal documentation reference. Most of NUI is currently undocumented and so existing information is scattered over many places.
-I often discovered how things work and how to use them from looking at the UI files in [Terasology](https://github.com/MovingBlocks/Terasology), the project in which NUI originated.
+I'm using this project as a way of practicing and learning how to best use NUI and also as an informal documentation reference.
+I often discovered how things work and how to use them from looking at the UI files in [Terasology](https://github.com/MovingBlocks/Terasology), the project in which NUI originated. Their [Quick Start](https://github.com/Terasology/TutorialNui/wiki/Quick-Start) page provides a good starting point.
 ### Building
 > At the moment these samples use my custom `multi-touch` branch of NUI.
 > To use this you can clone the branch with the following command.
@@ -41,3 +41,19 @@ For a copy of a custom remote and/or branch, provide options via the `nuiRemote`
 ```batch
 gradlew fetchNUI -PnuiRemote=<CUSTOM_REMOTE>/TeraNUI.git -PnuiBranch=<BRANCH_NAME>
 ```
+
+### Project Structure
+- Most of the code is contained within the `samples` project, which holds the LibGDX application and UI screens.
+- The `desktop` project contains the code necessary to run the samples on desktop platforms (Windows, MacOS and Linux).
+- The `android` project contains the code needed to run the sanples on Android.
+#### Samples
+- `samples/src/main/java` - Source code
+  - `SamplesApp.java` - Application entry point
+  - `UISample.java` - UI screens base class
+  - `*Sample.java` - Sample UI screens
+  - `SimulatedPointer.java` - Fake pointer code for testing
+  - `DefaultSkins.java` - Code for creating default UI skin from assets
+  - `Assets.java` - Utility class used for loading and unloading assets
+- `samples/src/main/resources` - UI Assets
+  - `textures` - UI widget textures (e.g. button image)
+  - `audio` - UI widget sounds (e.g. button click sound)
