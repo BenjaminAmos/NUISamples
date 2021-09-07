@@ -1,5 +1,6 @@
-package org.terasology.nui.samples;
+package org.terasology.nui.samples.screens;
 
+import org.terasology.nui.samples.UISample;
 import org.terasology.nui.widgets.UILabel;
 
 public class BasicTextSample extends UISample {

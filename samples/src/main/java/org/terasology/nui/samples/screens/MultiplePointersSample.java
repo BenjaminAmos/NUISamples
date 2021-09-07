@@ -1,4 +1,4 @@
-package org.terasology.nui.samples;
+package org.terasology.nui.samples.screens;
 
 import org.terasology.nui.Color;
 import org.terasology.nui.HorizontalAlign;
@@ -6,6 +6,8 @@ import org.terasology.nui.VerticalAlign;
 import org.terasology.nui.layouts.relative.HorizontalHint;
 import org.terasology.nui.layouts.relative.RelativeLayout;
 import org.terasology.nui.layouts.relative.VerticalHint;
+import org.terasology.nui.samples.DefaultSkins;
+import org.terasology.nui.samples.UISample;
 import org.terasology.nui.skin.UISkinBuilder;
 import org.terasology.nui.widgets.UIButton;
 

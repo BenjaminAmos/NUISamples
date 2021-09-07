@@ -9,6 +9,7 @@ import org.terasology.nui.backends.libgdx.LibGDXFont;
 import org.terasology.nui.skin.UISkin;
 import org.terasology.nui.skin.UISkinBuilder;
 import org.terasology.nui.widgets.UIButton;
+import org.terasology.nui.widgets.UIList;
 import org.terasology.nui.widgets.UIText;
 
 public final class DefaultSkins {
@@ -37,6 +38,19 @@ public final class DefaultSkins {
                         .setElementMode(UIButton.DISABLED_MODE)
                             .setBackground(Assets.getTexture("button/buttonDisabled.png"))
                             .setTextColor((Color) Color.grey)
+
+                    .setElementClass(UIList.class)
+                        .setElementPart("item")
+                            .setElementMode(UIButton.DEFAULT_MODE)
+                                .setBackground(Assets.getTexture("button/button.png"))
+                            .setElementMode(UIButton.HOVER_MODE)
+                                .setBackground(Assets.getTexture("button/buttonHover.png"))
+                                .setTextColor((Color) Color.yellow)
+                            .setElementMode(UIButton.DOWN_MODE)
+                                .setBackground(Assets.getTexture("button/buttonDown.png"))
+                            .setElementMode(UIButton.DISABLED_MODE)
+                                .setBackground(Assets.getTexture("button/buttonDisabled.png"))
+                                .setTextColor((Color) Color.grey)
 
                     .setElementClass(UIText.class)
                         .setBackground(Assets.getTexture("box.png"))

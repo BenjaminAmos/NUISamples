@@ -25,6 +25,13 @@ import org.terasology.nui.events.NUICharEvent;
 import org.terasology.nui.events.NUIKeyEvent;
 import org.terasology.nui.events.NUIMouseButtonEvent;
 import org.terasology.nui.events.NUIMouseWheelEvent;
+import org.terasology.nui.samples.screens.BasicButtonSample;
+import org.terasology.nui.samples.screens.BasicTextSample;
+import org.terasology.nui.samples.screens.ColumnMenuSample;
+import org.terasology.nui.samples.screens.MultiplePointersSample;
+import org.terasology.nui.samples.screens.RelativeLayoutSample;
+import org.terasology.nui.samples.screens.TextInputSample;
+import org.terasology.nui.samples.screens.UIListSample;
 import org.terasology.nui.skin.UISkin;
 import org.terasology.nui.widgets.UIButton;
 import org.terasology.nui.widgets.UILabel;
@@ -43,9 +50,12 @@ public class SamplesApp implements ApplicationListener {
     private final UISample[] samples = {
             new BasicTextSample(),
             new BasicButtonSample(),
+            new UIListSample(),
             new RelativeLayoutSample(),
+            new ColumnMenuSample(),
             new MultiplePointersSample(),
-            new TextInputSample()
+            new TextInputSample(),
+            new ButtonHoldBugSample()
     };
     private UIButton previousButton;
     private UIButton nextButton;
