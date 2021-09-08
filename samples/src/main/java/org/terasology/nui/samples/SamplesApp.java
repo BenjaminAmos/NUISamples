@@ -54,8 +54,7 @@ public class SamplesApp implements ApplicationListener {
             new RelativeLayoutSample(),
             new ColumnMenuSample(),
             new MultiplePointersSample(),
-            new TextInputSample(),
-            new ButtonHoldBugSample()
+            new TextInputSample()
     };
     private UIButton previousButton;
     private UIButton nextButton;

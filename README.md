@@ -7,12 +7,6 @@ It uses LibGDX for rendering, audio and input handling.
 I'm using this project as a way of practicing and learning how to best use NUI and also as an informal documentation reference.
 I often discovered how things work and how to use them from looking at the UI files in [Terasology](https://github.com/MovingBlocks/Terasology), the project in which NUI originated. Their [Quick Start](https://github.com/Terasology/TutorialNui/wiki/Quick-Start) page provides a good starting point.
 ### Building
-> At the moment these samples use my custom `multi-touch` branch of NUI.
-> To use this you can clone the branch with the following command.
-> ```batch
-> gradlew fetchNUI -PnuiRemote=https://github.com/BenjaminAmos/TeraNUI.git -PnuiBranch=multi-touch
-> ```
-
 These samples can be built for both desktop platforms (Windows, MacOS, Linux) and Android. The desktop project can be run through the desktop entry point. To run the samples, use
 ```batch
 gradlew :desktop:run
